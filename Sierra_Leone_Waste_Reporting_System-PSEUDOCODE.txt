@@ -1,0 +1,64 @@
+Function Main
+    Output "*******************************************************************************"
+    Output "Sierra Leone Community Waste Reporting System"
+    Output "*******************************************************************************"
+    Declare String communityname
+    Declare Integer choice
+    Declare String problemtype
+    Declare Integer urgency
+    Declare String continue
+    Declare String priority
+
+    Output "Welcome to Sierra Leone Waste Helper"
+    Output "*******************************************************************************"
+    Output "Enter your community (example: Kissy, Waterloo, Bo): "
+    Input communityname
+    Assign continue = "yes"
+    Output "do you want to continue"
+    Input continue
+    If continue = "yes"
+        Output "*******************************************************************************"
+        Output "1. Report overflowing bin"
+        Output "2. Request waste collection"
+        Output "3. Get waste tips"
+        Output "*******************************************************************************"
+        Output "Enter your choice (1-3): "
+        Input choice
+        If choice == 1
+            Output "What is the problem? (overflowing / illegal dumping / no bin): "
+            Input problemtype
+            Output "How urgent is it? (1 = low,3 = medium 4= very urgent): "
+            Input urgency
+            If urgency>=4
+                Assign priority = "HIGH"
+                Output "Your report has been recorded for " & Communityname
+                Output "priority:" & priority
+                Output "Urgent! Contact local council or community leader."
+            Else
+                If urgency>=2
+                    Assign priority = "MEDIUM"
+                    Output "Your report has been recorded for " & Communityname
+                    Output "priority:" & priority
+                    Output "FEEDBACK: Please call local council or dump waste at designated site for now."
+                Else
+                    Assign priority = "LOW"
+                    Output "Your report has been recorded for " & Communityname
+                    Output "priority:" & priority
+                    Output "FEEDBACK: Please dump waste at designated site for now."
+                End
+            End
+        Else
+            If choice == 2
+                Output "Collection is usually every Tuesday and Friday. Please keep waste bagged."
+                Output "Please bag your waste and keep it ready."
+            Else
+                If choice == 3
+                    Output "1. Plan your meals and check your fridge before grocery shopping." & toChar(13) & "2. Create an 'eat me first' bin for food nearing expiration." & toChar(13) & "3. Freeze leftovers and extra bread before they go bad." & toChar(13) & "4. Compost food scraps like peels, eggshells, and coffee grounds." & toChar(13) & "5. Swap plastic wrap for glass jars or beeswax wraps." & toChar(13) & "6. Carry reusable shopping bags, a water bottle, and a travel mug." & toChar(13) & "7. Buy loose produce and bulk goods to avoid plastic packaging." & toChar(13) & "8. Borrow, rent, or buy secondhand instead of buying new." & toChar(13) & "9. Replace paper towels with washable cloth rags and towels." & toChar(13) & "10. Switch to low-waste bathroom items like bar soap and bamboo toothbrushes." & toChar(13) & "11. Go paperless with digital bills, statements, and receipts." & toChar(13) & "12. Set up separate, labeled bins for trash, recycling, and compost." & toChar(13) & "13. Take batteries, electronics, and chemicals to hazardous waste drop-offs."& toChar(13)&"14. Separate plastic"& toChar(13)&"15. Do not burn waste" & toChar(13)& "3. Report illegal dumping"
+                End
+            End
+        End
+        Output "NOTE:ALWAYS KEEP YOUR COMMUNITY CLEAN,HEALTH IS WEALTH"
+    Else
+        Output "ending  program.............................."
+    End
+End
