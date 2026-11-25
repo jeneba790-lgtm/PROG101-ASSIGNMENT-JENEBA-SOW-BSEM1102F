@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Sierra Leone Community Waste Reporting System"/>
+        <attribute name="authors" value="World Mart Computers"/>
+        <attribute name="about" value="Community waste reporting and waste-reduction tips"/>
+        <attribute name="saved" value="2026-11-22 06:15:00 AM"/>
+        <attribute name="created" value="V29ybGQgTWFydCBDb21wdXRlcnM7R0VPVEVDSDI5MDk0OzIwMjYtMTEtMjI7MDQ6MjY6MjQgQU07Mzk4OA=="/>
+        <attribute name="edited" value="V29ybGQgTWFydCBDb21wdXRlcnM7R0VPVEVDSDI5MDk0OzIwMjYtMTEtMjI7MDY6MTU6MDAgQU07MTs0MDk3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;*******************************************************************************&quot;" newline="True"/>
+            <output expression="&quot;Sierra Leone Community Waste Reporting System&quot;" newline="True"/>
+            <output expression="&quot;*******************************************************************************&quot;" newline="True"/>
+            <declare name="communityname" type="String" array="False" size=""/>
+            <declare name="choice" type="Integer" array="False" size=""/>
+            <declare name="problemtype" type="String" array="False" size=""/>
+            <declare name="urgency" type="Integer" array="False" size=""/>
+            <declare name="priority" type="String" array="False" size=""/>
+            <output expression="&quot;Welcome to Sierra Leone Waste Helper&quot;" newline="True"/>
+            <output expression="&quot;Enter your community (for example: Kissy, Waterloo, or Bo): &quot;" newline="True"/>
+            <input variable="communityname"/>
+            <output expression="&quot;Choose an option:&quot;" newline="True"/>
+            <output expression="&quot;1. Report a waste problem&quot;" newline="True"/>
+            <output expression="&quot;2. Request waste collection information&quot;" newline="True"/>
+            <output expression="&quot;3. Get waste-reduction tips&quot;" newline="True"/>
+            <output expression="&quot;Enter your choice (1-3): &quot;" newline="True"/>
+            <input variable="choice"/>
+            <if expression="choice = 1">
+                <then>
+                    <output expression="&quot;What is the problem? (overflowing bin / illegal dumping / no bin): &quot;" newline="True"/>
+                    <input variable="problemtype"/>
+                    <output expression="&quot;How urgent is it? Enter 1 (low), 2 or 3 (medium), or 4 (very urgent): &quot;" newline="True"/>
+                    <input variable="urgency"/>
+                    <if expression="urgency &lt; 1 or urgency &gt; 4">
+                        <then>
+                            <output expression="&quot;Invalid urgency. Please enter a number from 1 to 4.&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="urgency &gt;= 4">
+                                <then>
+                                    <assign variable="priority" expression="&quot;HIGH&quot;"/>
+                                    <output expression="&quot;Your &quot; &amp; problemtype &amp; &quot; report has been recorded for &quot; &amp; communityname &amp; &quot;.&quot;" newline="True"/>
+                                    <output expression="&quot;Priority: &quot; &amp; priority" newline="True"/>
+                                    <output expression="&quot;Urgent: contact your local council or community leader.&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="urgency &gt;= 2">
+                                        <then>
+                                            <assign variable="priority" expression="&quot;MEDIUM&quot;"/>
+                                            <output expression="&quot;Your &quot; &amp; problemtype &amp; &quot; report has been recorded for &quot; &amp; communityname &amp; &quot;.&quot;" newline="True"/>
+                                            <output expression="&quot;Priority: &quot; &amp; priority" newline="True"/>
+                                            <output expression="&quot;Please contact your local council or use a designated waste site in the meantime.&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="priority" expression="&quot;LOW&quot;"/>
+                                            <output expression="&quot;Your &quot; &amp; problemtype &amp; &quot; report has been recorded for &quot; &amp; communityname &amp; &quot;.&quot;" newline="True"/>
+                                            <output expression="&quot;Priority: &quot; &amp; priority" newline="True"/>
+                                            <output expression="&quot;Please use a designated waste site in the meantime.&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="choice = 2">
+                        <then>
+                            <output expression="&quot;Collection is usually every Tuesday and Friday. Please keep waste bagged and ready.&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="choice = 3">
+                                <then>
+                                    <output expression="&quot;Waste-reduction tips:&quot;" newline="True"/>
+                                    <output expression="&quot;1. Plan meals and check your fridge before shopping.&quot;" newline="True"/>
+                                    <output expression="&quot;2. Create an 'eat me first' bin for food nearing expiration.&quot;" newline="True"/>
+                                    <output expression="&quot;3. Freeze leftovers and extra bread before they go bad.&quot;" newline="True"/>
+                                    <output expression="&quot;4. Compost food scraps such as peels, eggshells, and coffee grounds.&quot;" newline="True"/>
+                                    <output expression="&quot;5. Use reusable containers instead of disposable wraps where practical.&quot;" newline="True"/>
+                                    <output expression="&quot;6. Carry reusable shopping bags and a refillable water bottle.&quot;" newline="True"/>
+                                    <output expression="&quot;7. Choose loose produce and bulk goods to reduce packaging.&quot;" newline="True"/>
+                                    <output expression="&quot;8. Borrow, rent, or buy secondhand instead of buying new.&quot;" newline="True"/>
+                                    <output expression="&quot;9. Replace paper towels with washable cloths when practical.&quot;" newline="True"/>
+                                    <output expression="&quot;10. Choose low-waste bathroom items such as bar soap.&quot;" newline="True"/>
+                                    <output expression="&quot;11. Use digital bills, statements, and receipts when available.&quot;" newline="True"/>
+                                    <output expression="&quot;12. Separate trash, recycling, and compost where collection is available.&quot;" newline="True"/>
+                                    <output expression="&quot;13. Take batteries, electronics, and chemicals to appropriate collection points.&quot;" newline="True"/>
+                                    <output expression="&quot;14. Separate recyclable plastics according to local collection guidance.&quot;" newline="True"/>
+                                    <output expression="&quot;15. Do not burn waste.&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Invalid choice. Please run the program again and enter 1, 2, or 3.&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;NOTE: Keep your community clean. Health is wealth.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
